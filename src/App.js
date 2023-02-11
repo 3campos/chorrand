@@ -1,11 +1,11 @@
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import ShowContainerTasq from './components/ShowContainerTasq'
-import {FeedbackProvider} from './context/FeedbackContext.js'
+import {TasqProvider} from './context/TasqContext.js'
 
 function App() {
     return(
-        <FeedbackProvider>
+        <TasqProvider>
             <Router>
                 <Routes>
                     <Route
@@ -18,7 +18,7 @@ function App() {
                     />
                 </Routes>
             </Router>
-        </FeedbackProvider>
+        </TasqProvider>
     )
 }
 
