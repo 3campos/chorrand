@@ -25,17 +25,46 @@ export const TasqProvider = ({children}) => {
     }
 
     //Add tasq
-    const addTasq = async (newTask) => {
+    const addTasq = async (newTasq) => {
         const response = await fetch('/tasq', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(newTask),
-            //JSON.stringify will turn the newTask, which is an array, into a JSON string.
+            body: JSON.stringify(newTasq),
+            //JSON.stringify will turn the newTasq, which is an array, into a JSON string.
         })
         const data = await response.json()
         setTasq([newTasq, ...tasq])
+    }
+
+    //delete tasq
+    const deleteTasq = async (deleteTasq) => {
+        if(window.confirm('Are you sure you want to delete this tasq?')){
+            await fetch (`/tasq/${id}`, {method: 'DELETE'})
+            setTasq(tasq.filter((item) => item.id !== id))
+        }
+    }
+
+    //update tasq item
+    const updateTasq = async (id, updItem) => {
+        const response = await fetch(`/tasq/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(updItem)
+        })
+        const data = await response.json()
+        setTasq(tasq.map((item)=> item.id === id ? {...item, ...data} : item))
+    }
+    
+    //set item to be updated
+    const editTasq = (item) => {
+        setTasqEdit({
+            item,
+            edit: true
+        })
     }
 
 }
