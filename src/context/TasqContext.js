@@ -17,10 +17,11 @@ export const TasqProvider = ({children}) => {
         fetchTasq()
     }, [])
 
-    //Fetch feedback
+    //Fetch tasq
     const fetchTasq = async () => {
-        
+        const response = await fetch(`/tasq`)
+        const data = await response.json()
+        setTasq(data)
     }
-
 
 }
