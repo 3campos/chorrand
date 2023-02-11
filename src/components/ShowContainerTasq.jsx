@@ -2,9 +2,11 @@ import Card from "./TasqCard"
 
 function ShowContainerTasq({children}){
     return(
+    <Card>
         <div>
             "hello world"
         </div>
+    </Card>
     )
 }
 

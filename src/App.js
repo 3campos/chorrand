@@ -7,6 +7,7 @@ function App() {
     return(
         <TasqProvider>
             <Router>
+              <div className='container'>
                 <Routes>
                     <Route
                     exact path='/'
@@ -17,6 +18,7 @@ function App() {
                         }
                     />
                 </Routes>
+              </div>
             </Router>
         </TasqProvider>
     )
