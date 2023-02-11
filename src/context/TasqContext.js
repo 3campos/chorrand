@@ -67,4 +67,20 @@ export const TasqProvider = ({children}) => {
         })
     }
 
+    return <TasqContext.Provider
+    value={{
+        tasq,
+        //passing state down into the components
+        deleteTasq,
+        addTasq,
+        updateTasq,
+        editTasq,
+        tasqEdit,
+        //This is the actual piece of state that holds the item and the boolean.
+    }}>
+    {children}
+    {/* these children props represents all of the components that need access to the context */}
+    </TasqContext.Provider>
 }
+
+export default TasqContext
