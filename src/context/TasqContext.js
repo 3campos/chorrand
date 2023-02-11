@@ -24,4 +24,18 @@ export const TasqProvider = ({children}) => {
         setTasq(data)
     }
 
+    //Add tasq
+    const addTasq = async (newTask) => {
+        const response = await fetch('/tasq', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newTask),
+            //JSON.stringify will turn the newTask, which is an array, into a JSON string.
+        })
+        const data = await response.json()
+        setTasq([newTasq, ...tasq])
+    }
+
 }
