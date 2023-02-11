@@ -1,3 +1,5 @@
+import Card from "./TasqCard"
+
 function ShowContainerTasq({children}){
     return(
         <div>

@@ -39,7 +39,7 @@ export const TasqProvider = ({children}) => {
     }
 
     //delete tasq
-    const deleteTasq = async (deleteTasq) => {
+    const deleteTasq = async (id) => {
         if(window.confirm('Are you sure you want to delete this tasq?')){
             await fetch (`/tasq/${id}`, {method: 'DELETE'})
             setTasq(tasq.filter((item) => item.id !== id))
