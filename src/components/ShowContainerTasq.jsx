@@ -1,12 +1,12 @@
-import Card from "./TasqCard"
+import TasqCard from "./TasqCard"
 
 function ShowContainerTasq({children}){
     return(
-    <Card>
+    <TasqCard>
         <div>
             "hello world"
         </div>
-    </Card>
+    </TasqCard>
     )
 }
 
