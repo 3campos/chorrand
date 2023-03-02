@@ -1,13 +1,11 @@
 import TasqCard from "./TasqCard"
+import { cyan, blueGrey, lightBlue, teal} from '@mui/material/colors';
+import { Button } from '@mui/material';
 
-function ShowContainerTasq({children}){
+export default function ShowContainerTasq({children}){
     return(
-    <TasqCard>
-        <div>
-            "hello world"
-        </div>
-    </TasqCard>
+    <div>
+    <TasqCard/>
+    </div>
     )
 }
-
-export default ShowContainerTasq

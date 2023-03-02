@@ -1,29 +1,46 @@
 import Card from '@mui/material/Card'
-// import Button from '@mui/material/Button'
-import { cyan, blueGrey, lightBlue } from '@mui/material/colors';
+import { cyan, blueGrey, lightBlue, teal} from '@mui/material/colors';
+import { Button } from '@mui/material';
 
-function TasqCard({children}){
+
+export default function TasqCard({children}){
     return(
+        <div>
         <Card 
             className='card' 
             variant='outlined'
             sx={
-                {backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:cyan[600], borderColor:'black', color: 'white'} 
+                {display: 'flex',
+                flexDirection: 'column',
+                // flexWrap: 'wrap',
+                backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:cyan[600], borderColor:'black', color: 'white'} 
             }}>
-            'hi world'
-            {children}
-            {/* <Button 
+            <div
+            sx={{alignContent: 'space-around'}}>
+                <div>
+                from tasqcard component
+                </div>
+                <div>
+                second div
+                </div>
+                <div>
+                third div
+                </div>
+            </div>
+            {/* {children} */}
+            <Button 
                 variant="outlined"
                 sx={
-                    {backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:cyan[600], borderColor:'black', color: 'white'} 
+                    {width: '50%', 
+                    alignSelf: 'center',backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[600], borderColor:'black', color: 'white'} 
                 }}
                 //an alternative way to code styling: 
                     //color="primary"
             >
                 Press Here
-            </Button> */}
+            </Button>
         </Card>
+        
+    </div>
     )
 }
-
-export default TasqCard
