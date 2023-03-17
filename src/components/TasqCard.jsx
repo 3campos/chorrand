@@ -24,6 +24,10 @@ const tasqOptions = [
       value: 'Cook',
       label: '🧑‍🍳',
     },
+    {
+      value: 'Mail',
+      label: '📦'
+    }
   ];
 
 export default function TasqCard({children}){
@@ -37,7 +41,7 @@ export default function TasqCard({children}){
                 {display: 'flex',
                 flexDirection: 'column',
                 // flexWrap: 'wrap',
-                backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:cyan[600], borderColor:'black', color: 'white'} 
+                backgroundColor: lightBlue[200], borderColor:'black', color: 'white','&:hover':{backgroundColor:cyan[600], borderColor:'black', color: 'white'} 
             }}>
             <div
             sx={{alignContent: 'space-around'}}
@@ -52,11 +56,14 @@ export default function TasqCard({children}){
                 select
                 label= "Tasq"
                 defaultValue="🤔"
-                sx={{width: '75%'}}>
+                color = 'secondary'
+                
+                sx={{width: '15%'}}>
                     {tasqOptions.map((option) => (
             <MenuItem 
             key={option.value} 
-            value={option.value} 
+            value={option.value}
+            sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}
             >
               {option.label}
             </MenuItem>
@@ -64,21 +71,28 @@ export default function TasqCard({children}){
                 </TextField>
                 </div>
                 </Typography>
-                <Typography variant="h5">
-                Tasq Description
+                <Typography variant="h5" sx={{pt: 5, pb: 5}}>
+                  <TextField
+                    id="standard-textarea"
+                    label="Tasq Description"
+                    placeholder="Placeholder"
+                    multiline
+                    variant="standard"
+                    sx={{width: '75%', color: 'black'}}
+                    color = 'secondary'
+                  />
                 </Typography>
             </div>
             {/* {children} */}
             <Button 
                 variant="outlined"
-                sx={
-                    {width: '50%', 
-                    alignSelf: 'center',backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[600], borderColor:'black', color: 'white'} 
+                display='inline-flex'
+                sx={{width: '33%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} 
                 }}
                 //an alternative way to code styling: 
                     //color="primary"
             >
-                Press Here
+                Log Tasq
             </Button>
         </Card>
         </ThemeProvider>
