@@ -6,6 +6,7 @@ import {Typography, TextField, MenuItem} from '@mui/material'
 import DogWalk from './DogWalk';
 import {ListComponent} from './ListComponent';
 import {useState} from 'react';
+import React from 'react';
 
 let theme = createTheme();
 theme=responsiveFontSizes(theme);
@@ -57,8 +58,13 @@ const taskOptions = [
 export default function TaskCard({children}){ 
 
     const [showTask, setShowTask] = useState(['']);
-    function showWalkTask() {
-        setShowTask([...showTask,<DogWalk/>])
+    function showWalkTask() { 
+      if (showTask.length === 1){
+      setShowTask([...showTask, <DogWalk/>])
+      } else {
+        setShowTask([...showTask.slice(0, -1)])
+      }
+      // event.preventDefault()
     }
 
     return(
@@ -95,9 +101,10 @@ export default function TaskCard({children}){
                       variant="outlined"
                       display='inline-flex'
                       sx={{flexDirection: 'reverse', alignItems: 'center', width: '33%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
-                      onClick={showWalkTask}
+                      onClick = { showWalkTask }
                       >{taskOptions[0].label}
                       </Button>
+                      {/* put this back after the arrow function and before the empty parens on the onclick function on line 98: {if (showTask.length > 0) {console.log (showWalkTask())} else {console.log ('null')} } */}
                     {/* ))} */}
                 {/* </TextField> */}
                 {showTask.map((item, i)=>(<ListComponent text={item}/>))}
