@@ -1,12 +1,12 @@
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import ShowContainerTasq from './components/ShowContainerTasq'
-import {TasqProvider} from './context/TasqContext.js'
+import ShowContainerTask from './components/ShowContainerTask'
+import {TaskProvider} from './context/TaskContext.js'
 import {createTheme, ThemeProvider} from '@mui/material'
 
 function App() {
     return(
-        <TasqProvider>
+        <TaskProvider>
             <Router>
               <div className='container'>
                 <Routes>
@@ -14,14 +14,14 @@ function App() {
                     exact path='/'
                         element={
                             <>
-                            <ShowContainerTasq />
+                            <ShowContainerTask />
                             </>
                         }
                     />
                 </Routes>
               </div>
             </Router>
-        </TasqProvider>
+        </TaskProvider>
     )
 }
 
