@@ -4,7 +4,7 @@ import TaskCard from "./TaskCard"
 
 export default function ShowContainerTask({children}){
     return(
-    <div>
+    <div className="back">
     <TaskCard/>
     </div>
     )

@@ -1,12 +1,21 @@
 import Card from '@mui/material/Card'
 import { cyan, blueGrey, lightBlue, teal} from '@mui/material/colors';
-import { Button } from '@mui/material';
+import { Button, FormControlLabel } from '@mui/material';
 import { createTheme, responsiveFontSizes, ThemeProvider} from '@mui/material/styles';
 import {Typography, TextField, MenuItem} from '@mui/material'
 import DogWalk from './DogWalk';
 import {ListComponent} from './ListComponent';
 import {useState} from 'react';
 import React from 'react';
+import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
+import RestaurantIcon from '@mui/icons-material/Restaurant';
+import WaterIcon from '@mui/icons-material/Water';
+import MedicationIcon from '@mui/icons-material/Medication';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import PsychologyIcon from '@mui/icons-material/Psychology';
+import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
+import IconButton from '@mui/material/IconButton';
+import Stack from '@mui/material/Stack';
 
 let theme = createTheme();
 theme=responsiveFontSizes(theme);
@@ -58,9 +67,10 @@ const taskOptions = [
 export default function TaskCard({children}){ 
 
     const [showTask, setShowTask] = useState(['']);
+
     function showWalkTask() { 
       if (showTask.length === 1){
-      setShowTask([...showTask, <DogWalk/>])
+      setShowTask([...showTask, <DogWalk />])
       } else {
         setShowTask([...showTask.slice(0, -1)])
       }
@@ -95,33 +105,90 @@ export default function TaskCard({children}){
                 color = 'secondary'
                 sx={{width: '15%'}}> */}
                     {/* {taskOptions.map((option, id) => ( */}
-                      <Button 
-                      // key={taskOptions.id} 
-                      // value={taskOptions}
-                      variant="outlined"
-                      display='inline-flex'
-                      sx={{flexDirection: 'reverse', alignItems: 'center', width: '33%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
-                      onClick = { showWalkTask }
-                      >{taskOptions[0].label}
-                      </Button>
+                    <Stack direction="row" spacing={1} sx={{wrap: 'wrap', ml: 12.5}}>
+                        <IconButton 
+                        size="small"
+                        variant="outlined"
+                        display='inline-flex'
+                        sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
+                        onClick = { showWalkTask }
+                        >
+                          <DirectionsRunIcon fontSize="large"/>
+                        </IconButton>
+                        <IconButton 
+                        // key={taskOptions.id} 
+                        // value={taskOptions}
+                        size="small"
+                        variant="outlined"
+                        display='inline-flex'
+                        sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
+                        onClick = { showWalkTask }
+                        >
+                          <RestaurantIcon fontSize="large"/>
+                        </IconButton>
+                        <IconButton 
+                        // key={taskOptions.id} 
+                        // value={taskOptions}
+                        size="small"
+                        variant="outlined"
+                        display='inline-flex'
+                        sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
+                        onClick = { showWalkTask }
+                        >
+                          <WaterIcon fontSize="large"/>
+                        </IconButton>
+                        <IconButton 
+                        // key={taskOptions.id} 
+                        // value={taskOptions}
+                        size="small"
+                        variant="outlined"
+                        display='inline-flex'
+                        sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
+                        onClick = { showWalkTask }
+                        >
+                          <MedicationIcon fontSize="large"/>
+                        </IconButton>
+                        <IconButton 
+                        // key={taskOptions.id} 
+                        // value={taskOptions}
+                        size="small"
+                        variant="outlined"
+                        display='inline-flex'
+                        sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
+                        onClick = { showWalkTask }
+                        >
+                          <AutoAwesomeIcon fontSize="large"/>
+                        </IconButton>
+                        <IconButton 
+                        // key={taskOptions.id} 
+                        // value={taskOptions}
+                        size="small"
+                        variant="outlined"
+                        display='inline-flex'
+                        sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
+                        onClick = { showWalkTask }
+                        >
+                          <PsychologyIcon fontSize="large"/>
+                        </IconButton>
+                        <IconButton 
+                        // key={taskOptions.id} 
+                        // value={taskOptions}
+                        size="small"
+                        variant="outlined"
+                        display='inline-flex'
+                        sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
+                        onClick = { showWalkTask }
+                        >
+                          <SportsEsportsIcon fontSize="large"/>
+                        </IconButton>
+                      </Stack>
                       {/* put this back after the arrow function and before the empty parens on the onclick function on line 98: {if (showTask.length > 0) {console.log (showWalkTask())} else {console.log ('null')} } */}
                     {/* ))} */}
                 {/* </TextField> */}
-                {showTask.map((item, i)=>(<ListComponent text={item}/>))}
+                    {showTask.map((item, i)=>(<ListComponent text={item}/>))}
                 </div>
                 </Typography>
-                <Typography variant="h5" sx={{pt: 5, pb: 5}}>
-                  <TextField
-                    id="standard-textarea"
-                    label={"Task Description"}
-                    placeholder=". . ."
-                    multiline
-                    variant="standard"
-                    sx={{width: '75%', color: 'black'}}
-                    color = 'secondary'
-                  >
-                    </TextField>
-                </Typography>
+                
             </div>
             {/* {children} */}
             <Button 
@@ -129,6 +196,7 @@ export default function TaskCard({children}){
                 display='inline-flex'
                 sx={{width: '33%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} 
                 }}
+                
                 //an alternative way to code styling: 
                     //color="primary"
             >
