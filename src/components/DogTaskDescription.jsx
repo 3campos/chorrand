@@ -6,7 +6,7 @@ export default function TaskDescription(){
             <Typography variant="h5" sx={{pt: 5, pb: 5}}>
                   <TextField
                     id="standard-textarea"
-                    label={"Task Description"}
+                    label={"Notes"}
                     placeholder=". . ."
                     multiline
                     variant="standard"
