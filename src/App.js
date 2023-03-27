@@ -1,5 +1,6 @@
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import Home from './components/Home'
 import ShowContainerTask from './components/ShowContainerTask'
 import {TaskProvider} from './context/TaskContext.js'
 import {createTheme, ThemeProvider} from '@mui/material'
@@ -28,9 +29,17 @@ export default function App() {
                     exact path='/'
                         element={
                             <div>
-                            <ShowContainerTask />
+                            <Home />
                             </div>
                         }
+                    />
+                    <Route
+                    exact path='/newTask'
+                    element={
+                    <div>
+                      <ShowContainerTask />
+                    </div>
+                    }
                     />
                 </Routes>
               </div>
