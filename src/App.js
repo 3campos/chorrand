@@ -15,9 +15,23 @@ export default function App() {
           text: {
             primary: "#ffffff"
           }
-        }
-      });
-
+        },
+        typography:{
+          fontFamily: [
+          'Montserrat', 
+          'sans-serif'].join(','),
+          // fontFamily: [
+          // 'Mali', 
+          // 'cursive'
+          // ].join(','),
+          // fontFamily: [
+          // 'Montserrat', 'sans-serif'
+          // ].join(','),
+          // fontFamily: [
+          // 'Share Tech Mono', 'monospace'
+          // ].join(','),
+        }});
+      
     return(
         <ThemeProvider theme={themeDark}>
             <CssBaseline/>
