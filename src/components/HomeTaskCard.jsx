@@ -1,5 +1,5 @@
 import React from 'react'
-import FeedbackContext from '../context/FeedbackContext'
+import TaskContext from '../context/TaskContext'
 
 export default function HomeTaskCard({item}) {
   return (
