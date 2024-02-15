@@ -1,11 +1,11 @@
 import * as React from 'react';
 import {Typography, TextField, MenuItem} from '@mui/material'
-import DogTaskDescription from './DogTaskDescription'
+import DogTaskDescription from '../DogTaskDescription'
 import Card from '@mui/material/Card'
 import { cyan, blueGrey, lightBlue, teal} from '@mui/material/colors';
 import Grow from '@mui/material/Grow';
 
-export default function DogWalk(){
+export default function WalkDog(){
 
     const [checked, setChecked] = React.useState(false);
     const handleChange = () => {
@@ -18,7 +18,7 @@ export default function DogWalk(){
             <div
             sx={{ml: 4}}
             >
-                Dog Walk
+                Walk Dog
             </div>
             <div>
             <TextField

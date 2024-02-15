@@ -3,7 +3,7 @@ import { cyan, blueGrey, lightBlue, teal} from '@mui/material/colors';
 import { Button, FormControlLabel } from '@mui/material';
 import { createTheme, responsiveFontSizes, ThemeProvider} from '@mui/material/styles';
 import {Typography, TextField, MenuItem} from '@mui/material'
-import DogWalk from './DogWalk';
+import WalkDog from './dogTasks/WalkDog';
 import {ListComponent} from './ListComponent';
 import {useState} from 'react';
 import React from 'react';
@@ -64,13 +64,13 @@ const taskOptions = [
 
 // let testStore = '';
 
-export default function TaskCard({children}){ 
+export default function AddTaskCard({children}){ 
 
     const [showTask, setShowTask] = useState(['']);
 
     function showWalkTask() { 
       if (showTask.length === 1){
-      setShowTask([...showTask, <DogWalk />])
+      setShowTask([...showTask, <WalkDog/>])
       } else {
         setShowTask([...showTask.slice(0, -1)])
       }

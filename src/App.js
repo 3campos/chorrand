@@ -35,7 +35,6 @@ export default function App() {
     return(
         <ThemeProvider theme={themeDark}>
             <CssBaseline/>
-        <TaskProvider>
             <Router>
               <div className='container'>
                 <Routes>
@@ -51,14 +50,13 @@ export default function App() {
                     exact path='/newTask'
                       element={
                         <div>
-                          <ShowContainerTask />
+                          <ShowContainerTask/>
                         </div>
                       }
                     />
                 </Routes>
               </div>
             </Router>
-        </TaskProvider>
         </ThemeProvider>
     )
 }
