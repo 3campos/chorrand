@@ -68,14 +68,21 @@ export default function AddTaskCard({children}){
 
     const [showTask, setShowTask] = useState(['']);
 
-    function showWalkTask() { 
-      if (showTask.length === 1){
+    function showDogTask(event) {
+      const clickedIcon = event.target.dataset.testid
+      if (showTask.length === 1 && clickedIcon === 'DirectionsRunIcon'){
       setShowTask([...showTask, <WalkDog/>])
       } else {
         setShowTask([...showTask.slice(0, -1)])
       }
       // event.preventDefault()
     }
+
+    // function cardDropDown() {
+      
+    // }
+
+    //tinker with above function. maybe I can use the icon clicked on to drop down the correct dogTask
 
     return(
         <div>
@@ -111,9 +118,11 @@ export default function AddTaskCard({children}){
                         variant="outlined"
                         display='inline-flex'
                         sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
-                        onClick = { showWalkTask }
+                        onClick = { showDogTask }
+                        // onClick = { () => showDogTask() }
                         >
                           <DirectionsRunIcon fontSize="large"/>
+                          {/* ^here's the icon I can use to feed into the showWalkTask function, which I'll also have to rename */}
                         </IconButton>
                         <IconButton 
                         // key={taskOptions.id} 
@@ -122,7 +131,7 @@ export default function AddTaskCard({children}){
                         variant="outlined"
                         display='inline-flex'
                         sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
-                        onClick = { showWalkTask }
+                        onClick = { showDogTask }
                         >
                           <RestaurantIcon fontSize="large"/>
                         </IconButton>
@@ -133,7 +142,7 @@ export default function AddTaskCard({children}){
                         variant="outlined"
                         display='inline-flex'
                         sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
-                        onClick = { showWalkTask }
+                        onClick = { showDogTask }
                         >
                           <WaterIcon fontSize="large"/>
                         </IconButton>
@@ -144,7 +153,7 @@ export default function AddTaskCard({children}){
                         variant="outlined"
                         display='inline-flex'
                         sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
-                        onClick = { showWalkTask }
+                        onClick = { showDogTask }
                         >
                           <MedicationIcon fontSize="large"/>
                         </IconButton>
@@ -155,7 +164,7 @@ export default function AddTaskCard({children}){
                         variant="outlined"
                         display='inline-flex'
                         sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
-                        onClick = { showWalkTask }
+                        onClick = { showDogTask }
                         >
                           <AutoAwesomeIcon fontSize="large"/>
                         </IconButton>
@@ -166,7 +175,7 @@ export default function AddTaskCard({children}){
                         variant="outlined"
                         display='inline-flex'
                         sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
-                        onClick = { showWalkTask }
+                        onClick = { showDogTask }
                         >
                           <PsychologyIcon fontSize="large"/>
                         </IconButton>
@@ -177,7 +186,7 @@ export default function AddTaskCard({children}){
                         variant="outlined"
                         display='inline-flex'
                         sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
-                        onClick = { showWalkTask }
+                        onClick = { showDogTask }
                         >
                           <SportsEsportsIcon fontSize="large"/>
                         </IconButton>

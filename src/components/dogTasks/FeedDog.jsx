@@ -5,7 +5,7 @@ import Card from '@mui/material/Card'
 import { cyan, blueGrey, lightBlue, teal} from '@mui/material/colors';
 import Grow from '@mui/material/Grow';
 
-export default function WalkDog(){
+export default function FeedDog(){
 
     const [checked, setChecked] = React.useState(false);
     const handleChange = () => {
@@ -18,7 +18,7 @@ export default function WalkDog(){
             <div
             sx={{ml: 4}}
             >
-                Walk Dog
+                Feed Dog
             </div>
             <div>
             <TextField
