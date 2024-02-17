@@ -5,6 +5,7 @@ import { createTheme, responsiveFontSizes, ThemeProvider} from '@mui/material/st
 import {Typography, TextField, MenuItem} from '@mui/material'
 import WalkDog from './dogTasks/WalkDog';
 import FeedDog from './dogTasks/FeedDog';
+import HydrateDog from './dogTasks/HydrateDog';
 import {ListComponent} from './ListComponent';
 import {useState, useEffect} from 'react';
 import React from 'react';
@@ -86,9 +87,16 @@ export default function AddTaskCard({children}){
         testStore.push(<FeedDog/>)
         setShowTask(testStore)
       } else if (event === 'WaterClick'){
-        testStore.push(<FeedDog/>)
+        testStore.push(<HydrateDog/>)
         setShowTask(testStore)
-      }
+      } 
+      // else if (event === 'MedicationClick'){
+      //   testStore.push(<FeedDog/>)
+      //   setShowTask(testStore)
+
+
+
+      
       // event.preventDefault()
     }
 
@@ -150,8 +158,6 @@ export default function AddTaskCard({children}){
                           />
                         </IconButton>
                         <IconButton 
-                        // key={taskOptions.id} 
-                        // value={taskOptions}
                         key="WaterIconButton"
                         size="small"
                         variant="outlined"
@@ -164,14 +170,12 @@ export default function AddTaskCard({children}){
                           />
                         </IconButton>
                         <IconButton 
-                        // key={taskOptions.id} 
-                        // value={taskOptions}
                         key='MedicationIconButton'
                         size="small"
                         variant="outlined"
                         display='inline-flex'
                         sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
-                        onClick = { showDogTask }
+                        onClick = {()=>showDogTask('MedicationClick')}
                         >
                           <MedicationIcon fontSize="large"
                           key="MedicationIcon"
