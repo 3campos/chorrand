@@ -14,6 +14,7 @@ export default function FeedDog(){
 
     return(
         <Card
+        key={'FeedDogKey'}
         sx={{flexDirection: 'reverse', alignItems: 'center', width: '100%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900], borderRadius: 2, border: 2, '&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#3e2723'} }}>
             <div
             sx={{ml: 4}}
@@ -34,7 +35,7 @@ export default function FeedDog(){
             <div>
             <TextField
                     id="standard-textarea"
-                    label={"Potty?:"}
+                    label={"What was the pup fed?:"}
                     placeholder=". . ."
                     multiline
                     variant="standard"

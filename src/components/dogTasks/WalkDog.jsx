@@ -14,6 +14,7 @@ export default function WalkDog(){
 
     return(
         <Card
+        key={'WalkDogKey'}
         sx={{flexDirection: 'reverse', alignItems: 'center', width: '100%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900], borderRadius: 2, border: 2, '&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#3e2723'} }}>
             <div
             sx={{ml: 4}}

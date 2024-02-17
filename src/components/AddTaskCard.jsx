@@ -4,8 +4,9 @@ import { Button, FormControlLabel } from '@mui/material';
 import { createTheme, responsiveFontSizes, ThemeProvider} from '@mui/material/styles';
 import {Typography, TextField, MenuItem} from '@mui/material'
 import WalkDog from './dogTasks/WalkDog';
+import FeedDog from './dogTasks/FeedDog';
 import {ListComponent} from './ListComponent';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import React from 'react';
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
@@ -62,18 +63,52 @@ const taskOptions = [
     }
   ];
 
-// let testStore = '';
+
 
 export default function AddTaskCard({children}){ 
 
     const [showTask, setShowTask] = useState(['']);
 
+    const [cardStatus, setCardStatus] = useState(true);
+    // let testVar = 'newark'
+    // console.log('74: pre-pre', cardStatus)
+    // console.log('75:showTask', showTask)
+
     function showDogTask(event) {
-      const clickedIcon = event.target.dataset.testid
-      if (showTask.length === 1 && clickedIcon === 'DirectionsRunIcon'){
-      setShowTask([...showTask, <WalkDog/>])
-      } else {
-        setShowTask([...showTask.slice(0, -1)])
+      // console.log('77: pre-', cardStatus)
+      // console.log('80:', event)
+      let testStore = [...showTask];
+      // console.log('81:length', showTask)
+
+      if (event === 'DirectionsRunClick'){
+        // setShowTask([<WalkDog/>]);
+        // setShowTask([<WalkDog/>]);
+        // if(showTask.length===3){
+        //   setShowTask([...showTask.slice(0, -2)])
+        // }
+        // setCardStatus(prevCardStatus=>!prevCardStatus)
+        // console.log('87:array and og', showTask)
+        // testStore.splice(0, -1)
+        // setShowTask(showTask)
+        testStore.push(<WalkDog/>)
+        setShowTask(testStore)
+        console.log(testStore[testStore.length-1])
+      } 
+      else if (event === 'RestaurantClick') {
+        testStore.push(<FeedDog/>)
+        setShowTask(testStore)
+        console.log(testStore[testStore.length-1])
+        // if(showTask.length===1){
+        //   setShowTask([...showTask, <FeedDog/>])
+        // }
+        // if(showTask.length===2){
+        //   setShowTask([...showTask.slice(0, -1)])
+        //   setShowTask([...showTask, <FeedDog/>])
+        // }
+        // setShowTask([...showTask, <FeedDog/>])
+        // if(showTask.length===3){
+        //   setShowTask([...showTask.slice(0, -2)])
+        // }
       }
       // event.preventDefault()
     }
@@ -114,87 +149,109 @@ export default function AddTaskCard({children}){
                     {/* {taskOptions.map((option, id) => ( */}
                     <Stack direction="row" spacing={1} sx={{wrap: 'wrap', ml: 12.5}}>
                         <IconButton 
+                        key='DirectionsRunButton'
                         size="small"
                         variant="outlined"
                         display='inline-flex'
                         sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
-                        onClick = { showDogTask }
+                        onClick = {()=>showDogTask('DirectionsRunClick')}
+
                         // onClick = { () => showDogTask() }
                         >
-                          <DirectionsRunIcon fontSize="large"/>
+                          <DirectionsRunIcon fontSize="large" key='DirectionsRunIcon'/>
                           {/* ^here's the icon I can use to feed into the showWalkTask function, which I'll also have to rename */}
                         </IconButton>
                         <IconButton 
                         // key={taskOptions.id} 
                         // value={taskOptions}
+                        key='RestaurantIconButton'
                         size="small"
                         variant="outlined"
                         display='inline-flex'
                         sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
-                        onClick = { showDogTask }
+                        // onClick = { showDogTask }
+                        onClick = {()=>showDogTask('RestaurantClick')}
                         >
-                          <RestaurantIcon fontSize="large"/>
+                          <RestaurantIcon fontSize="large"
+                            key='RestaurantIcon'
+                          />
                         </IconButton>
                         <IconButton 
                         // key={taskOptions.id} 
                         // value={taskOptions}
+                        key="WaterIconButton"
                         size="small"
                         variant="outlined"
                         display='inline-flex'
                         sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
                         onClick = { showDogTask }
                         >
-                          <WaterIcon fontSize="large"/>
+                          <WaterIcon fontSize="large"
+                          key="WaterIcon"
+                          />
                         </IconButton>
                         <IconButton 
                         // key={taskOptions.id} 
                         // value={taskOptions}
+                        key='MedicationIconButton'
                         size="small"
                         variant="outlined"
                         display='inline-flex'
                         sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
                         onClick = { showDogTask }
                         >
-                          <MedicationIcon fontSize="large"/>
+                          <MedicationIcon fontSize="large"
+                          key="MedicationIcon"
+                          />
                         </IconButton>
                         <IconButton 
                         // key={taskOptions.id} 
                         // value={taskOptions}
+                        key="AutoAwesomeIconButton"
                         size="small"
                         variant="outlined"
                         display='inline-flex'
                         sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
                         onClick = { showDogTask }
                         >
-                          <AutoAwesomeIcon fontSize="large"/>
+                          <AutoAwesomeIcon fontSize="large"
+                          key="AutoAwesomeIcon"
+                          />
                         </IconButton>
                         <IconButton 
                         // key={taskOptions.id} 
                         // value={taskOptions}
+                        key='PsychologyIconButton'
                         size="small"
                         variant="outlined"
                         display='inline-flex'
                         sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
                         onClick = { showDogTask }
                         >
-                          <PsychologyIcon fontSize="large"/>
+                          <PsychologyIcon fontSize="large"
+                          key="PsychologyIcon"
+                          />
                         </IconButton>
                         <IconButton 
                         // key={taskOptions.id} 
                         // value={taskOptions}
+                        key='SportsEsportsIconButton'
                         size="small"
                         variant="outlined"
                         display='inline-flex'
                         sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
                         onClick = { showDogTask }
                         >
-                          <SportsEsportsIcon fontSize="large"/>
+                          <SportsEsportsIcon fontSize="large"
+                          key="SportsEsportsIcon"
+                          />
                         </IconButton>
                       </Stack>
                       {/* put this back after the arrow function and before the empty parens on the onclick function on line 98: {if (showTask.length > 0) {console.log (showWalkTask())} else {console.log ('null')} } */}
                     {/* ))} */}
                 {/* </TextField> */}
-                    {showTask.map((item, i)=>(<ListComponent text={item}/>))}
+                    {/* {showTask.map((item)=>(<ListComponent key={item.name} text={item}/>))} */}
+                    <div>{showTask[showTask.length-1]}</div>
                 </div>
                 </Typography>
                 
