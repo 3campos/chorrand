@@ -75,40 +75,19 @@ export default function AddTaskCard({children}){
     // console.log('75:showTask', showTask)
 
     function showDogTask(event) {
-      // console.log('77: pre-', cardStatus)
-      // console.log('80:', event)
+      
       let testStore = [...showTask];
-      // console.log('81:length', showTask)
 
       if (event === 'DirectionsRunClick'){
-        // setShowTask([<WalkDog/>]);
-        // setShowTask([<WalkDog/>]);
-        // if(showTask.length===3){
-        //   setShowTask([...showTask.slice(0, -2)])
-        // }
-        // setCardStatus(prevCardStatus=>!prevCardStatus)
-        // console.log('87:array and og', showTask)
-        // testStore.splice(0, -1)
-        // setShowTask(showTask)
         testStore.push(<WalkDog/>)
         setShowTask(testStore)
-        console.log(testStore[testStore.length-1])
       } 
       else if (event === 'RestaurantClick') {
         testStore.push(<FeedDog/>)
         setShowTask(testStore)
-        console.log(testStore[testStore.length-1])
-        // if(showTask.length===1){
-        //   setShowTask([...showTask, <FeedDog/>])
-        // }
-        // if(showTask.length===2){
-        //   setShowTask([...showTask.slice(0, -1)])
-        //   setShowTask([...showTask, <FeedDog/>])
-        // }
-        // setShowTask([...showTask, <FeedDog/>])
-        // if(showTask.length===3){
-        //   setShowTask([...showTask.slice(0, -2)])
-        // }
+      } else if (event === 'WaterClick'){
+        testStore.push(<FeedDog/>)
+        setShowTask(testStore)
       }
       // event.preventDefault()
     }
@@ -155,21 +134,15 @@ export default function AddTaskCard({children}){
                         display='inline-flex'
                         sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
                         onClick = {()=>showDogTask('DirectionsRunClick')}
-
-                        // onClick = { () => showDogTask() }
                         >
                           <DirectionsRunIcon fontSize="large" key='DirectionsRunIcon'/>
-                          {/* ^here's the icon I can use to feed into the showWalkTask function, which I'll also have to rename */}
                         </IconButton>
                         <IconButton 
-                        // key={taskOptions.id} 
-                        // value={taskOptions}
                         key='RestaurantIconButton'
                         size="small"
                         variant="outlined"
                         display='inline-flex'
                         sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
-                        // onClick = { showDogTask }
                         onClick = {()=>showDogTask('RestaurantClick')}
                         >
                           <RestaurantIcon fontSize="large"
@@ -184,7 +157,7 @@ export default function AddTaskCard({children}){
                         variant="outlined"
                         display='inline-flex'
                         sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],'&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
-                        onClick = { showDogTask }
+                        onClick = {()=>showDogTask('WaterClick')}
                         >
                           <WaterIcon fontSize="large"
                           key="WaterIcon"
