@@ -31,22 +31,22 @@ export default function AddTaskCard({children}){
 
     function showDogTask(event) {
       
-      let testStore = [...showTask];
+      let showTaskVar = [...showTask];
 
       if (event === 'DirectionsRunClick'){
-        testStore.push(<WalkDog/>)
-        setShowTask(testStore)
+        showTaskVar.push(<WalkDog/>)
+        setShowTask(showTaskVar)
       } 
       else if (event === 'RestaurantClick') {
-        testStore.push(<FeedDog/>)
-        setShowTask(testStore)
+        showTaskVar.push(<FeedDog/>)
+        setShowTask(showTaskVar)
       } else if (event === 'WaterClick'){
-        testStore.push(<HydrateDog/>)
-        setShowTask(testStore)
+        showTaskVar.push(<HydrateDog/>)
+        setShowTask(showTaskVar)
       } 
       // else if (event === 'MedicationClick'){
-      //   testStore.push(<FeedDog/>)
-      //   setShowTask(testStore)
+      //   showTaskVar.push(<FeedDog/>)
+      //   setShowTask(showTaskVar)
     }
 
     return(
