@@ -6,6 +6,7 @@ import {Typography, TextField, MenuItem} from '@mui/material'
 import WalkDog from './dogTasks/WalkDog';
 import FeedDog from './dogTasks/FeedDog';
 import HydrateDog from './dogTasks/HydrateDog';
+import MedicateDog from './dogTasks/MedicateDog';
 import {ListComponent} from './ListComponent';
 import {useState, useEffect} from 'react';
 import React from 'react';
@@ -44,9 +45,9 @@ export default function AddTaskCard({children}){
         showTaskVar.push(<HydrateDog/>)
         setShowTask(showTaskVar)
       } 
-      // else if (event === 'MedicationClick'){
-      //   showTaskVar.push(<FeedDog/>)
-      //   setShowTask(showTaskVar)
+      else if (event === 'MedicationClick'){
+        showTaskVar.push(<MedicateDog/>)
+        setShowTask(showTaskVar)
     }
 
     return(
