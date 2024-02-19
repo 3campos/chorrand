@@ -24,7 +24,7 @@ let theme = createTheme();
 theme=responsiveFontSizes(theme);
 
 
-export default function AddTaskCard({children}){ 
+export default function AddTaskCard({children}){
 
     const [showTask, setShowTask] = useState(['']);
 
@@ -174,4 +174,4 @@ export default function AddTaskCard({children}){
         </ThemeProvider>
     </div>
     )
-}
+}}
