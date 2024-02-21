@@ -25,8 +25,6 @@ import Stack from '@mui/material/Stack';
 let theme = createTheme();
 theme=responsiveFontSizes(theme);
 
-//<a target="_blank" href="https://icons8.com/icon/10347/hair-brush">Hair Brush</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-
 export default function AddTaskCard({children}){
 
     const [showTask, setShowTask] = useState(['']);
@@ -180,4 +178,3 @@ export default function AddTaskCard({children}){
     </div>
     )
 }
-
