@@ -8,6 +8,7 @@ import FeedDog from './dogTasks/FeedDog';
 import HydrateDog from './dogTasks/HydrateDog';
 import MedicateDog from './dogTasks/MedicateDog';
 import BrushDog from './dogTasks/BrushDog'
+import TrainDog from './dogTasks/TrainDog'
 import {ListComponent} from './ListComponent';
 import {useState, useEffect} from 'react';
 import React from 'react';
@@ -52,6 +53,9 @@ export default function AddTaskCard({children}){
       } 
       else if (event === 'BrushClick'){
         showTaskVar.push(<BrushDog/>)
+        setShowTask(showTaskVar)
+      } else if (event === 'TrainClick'){
+        showTaskVar.push(<TrainDog/>)
         setShowTask(showTaskVar)
       }
   }
@@ -141,7 +145,7 @@ export default function AddTaskCard({children}){
                         variant="outlined"
                         display='inline-flex'
                         sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: 'black','&:hover':{backgroundColor:yellow[200], borderColor:'black'} }}
-                        onClick = { showDogTask }
+                        onClick = {()=>showDogTask('TrainClick')}
                         >
                           <PsychologyIcon fontSize="large"
                           key="PsychologyIcon"

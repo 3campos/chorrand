@@ -5,7 +5,7 @@ import Card from '@mui/material/Card'
 import { cyan, blueGrey, lightBlue, teal} from '@mui/material/colors';
 import Grow from '@mui/material/Grow';
 
-export default function MedicateDog(){
+export default function TrainDog(){
 
     const [checked, setChecked] = React.useState(false);
     const handleChange = () => {
@@ -14,18 +14,18 @@ export default function MedicateDog(){
 
     return(
         <Card
-        key={'MedicateDogKey'}
+        key={'TrainDogKey'}
         sx={{flexDirection: 'reverse', alignItems: 'center', width: '100%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: 'black', borderRadius: 2, border: 2, '&:hover':{backgroundColor:teal[200], borderColor:'black'} }}
         align='center'>
             <div
             align='center'
             >
-                Give Medication To Dog
+                Train Dog
             </div>
             <div>
             <TextField
                     id="standard-textarea"
-                    label={"Medication Name:"}
+                    label={"Time Spent:"}
                     placeholder=". . ."
                     multiline
                     variant="standard"
@@ -36,7 +36,7 @@ export default function MedicateDog(){
             <div>
             <TextField
                     id="standard-textarea"
-                    label={"Dosage Given:"}
+                    label={"Commands worked on:"}
                     placeholder=". . ."
                     multiline
                     variant="standard"
@@ -47,17 +47,18 @@ export default function MedicateDog(){
             <div>
             <TextField
                     id="standard-textarea"
-                    label={"Date Given:"}
+                    label={"Which commands did your pup ace?"}
                     placeholder=". . ."
                     multiline
                     variant="standard"
                     sx={{width: '75%', color: 'black', m: 1}}
                     color = 'primary'
                   />
-            </div><div>
+            </div>
+            <div>
             <TextField
                     id="standard-textarea"
-                    label={"Time Given:"}
+                    label={"Which commands need more work?"}
                     placeholder=". . ."
                     multiline
                     variant="standard"
