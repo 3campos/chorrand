@@ -7,6 +7,7 @@ import WalkDog from './dogTasks/WalkDog';
 import FeedDog from './dogTasks/FeedDog';
 import HydrateDog from './dogTasks/HydrateDog';
 import MedicateDog from './dogTasks/MedicateDog';
+import BrushDog from './dogTasks/BrushDog'
 import {ListComponent} from './ListComponent';
 import {useState, useEffect} from 'react';
 import React from 'react';
@@ -50,7 +51,12 @@ export default function AddTaskCard({children}){
       else if (event === 'MedicationClick'){
         showTaskVar.push(<MedicateDog/>)
         setShowTask(showTaskVar)
-    }}
+      } 
+      else if (event === 'BrushClick'){
+        showTaskVar.push(<BrushDog/>)
+        setShowTask(showTaskVar)
+      }
+  }
 
     return(
         <div>
@@ -127,7 +133,7 @@ export default function AddTaskCard({children}){
                         variant="outlined"
                         display='inline-flex'
                         sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: 'black','&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
-                        onClick = { showDogTask }
+                        onClick = {()=>showDogTask('BrushClick')}
                         >
                             <BrushIcon />
                         </IconButton>
