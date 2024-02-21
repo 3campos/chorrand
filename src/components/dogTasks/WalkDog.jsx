@@ -1,9 +1,11 @@
 import * as React from 'react';
-import {Typography, TextField, MenuItem} from '@mui/material'
+import {TextField} from '@mui/material'
 import DogTaskDescription from '../DogTaskDescription'
 import Card from '@mui/material/Card'
-import { cyan, blueGrey, lightBlue, teal} from '@mui/material/colors';
-import Grow from '@mui/material/Grow';
+import { yellow, blueGrey, lightBlue, teal } from '@mui/material/colors';
+import TaskContext from '../../context/TaskContext'
+import { useContext } from 'react'
+import { Button } from '@mui/material';
 
 export default function WalkDog(){
 
@@ -11,6 +13,7 @@ export default function WalkDog(){
     const handleChange = () => {
       setChecked((prev) => !prev);
     };
+    const {task} = useContext(TaskContext)
 
     return(
         <Card
@@ -47,6 +50,15 @@ export default function WalkDog(){
             <div>
                 <DogTaskDescription/>
             </div>
+            <Button 
+                variant="outlined"
+                display='inline-flex'
+                sx={{width: '33%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900], fontWeight: 'bold', mt: 1.5, '&:hover':{backgroundColor:yellow[200], borderColor:'black'} 
+                }}
+                // onClick={addTask}
+            >
+                Log Task
+            </Button>
         </Card>
     )
 }

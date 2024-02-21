@@ -22,6 +22,8 @@ import PsychologyIcon from '@mui/icons-material/Psychology';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
+import TaskContext from '../context/TaskContext'
+import { useContext } from 'react'
 
 let theme = createTheme();
 theme=responsiveFontSizes(theme);
@@ -169,14 +171,6 @@ export default function AddTaskCard({children}){
                 </Typography>
                 
             </div>
-            <Button 
-                variant="outlined"
-                display='inline-flex'
-                sx={{width: '33%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900], fontWeight: 'bold', mt: 1.5, '&:hover':{backgroundColor:yellow[200], borderColor:'black'} 
-                }}
-            >
-                Log Task
-            </Button>
         </Card>
         </ThemeProvider>
     </div>
