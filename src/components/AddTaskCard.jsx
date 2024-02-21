@@ -1,5 +1,5 @@
 import Card from '@mui/material/Card'
-import { cyan, blueGrey, lightBlue, teal} from '@mui/material/colors';
+import { cyan, blueGrey, lightBlue, teal, yellow} from '@mui/material/colors';
 import { Button, FormControlLabel } from '@mui/material';
 import { createTheme, responsiveFontSizes, ThemeProvider} from '@mui/material/styles';
 import {Typography, TextField, MenuItem} from '@mui/material'
@@ -80,13 +80,13 @@ export default function AddTaskCard({children}){
                 <div align="center"
                 >Add New Task</div>
                 <div>
-                    <Stack direction="row" spacing={1} sx={{wrap: 'wrap', ml: 12.5}}>
+                    <Stack direction="row" spacing={1} sx={{wrap: 'wrap', ml: 12.5, mb: 1.5 }}>
                         <IconButton 
                         key='DirectionsRunButton'
                         size="small"
                         variant="outlined"
                         display='inline-flex'
-                        sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: 'black','&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
+                        sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: 'black','&:hover':{backgroundColor:yellow[200], borderColor:'black'} }}
                         onClick = {()=>showDogTask('DirectionsRunClick')}
                         >
                           <DirectionsRunIcon fontSize="large" key='DirectionsRunIcon'/>
@@ -96,7 +96,7 @@ export default function AddTaskCard({children}){
                         size="small"
                         variant="outlined"
                         display='inline-flex'
-                        sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: 'black','&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
+                        sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: 'black','&:hover':{backgroundColor:yellow[200], borderColor:'black'} }}
                         onClick = {()=>showDogTask('RestaurantClick')}
                         >
                           <RestaurantIcon fontSize="large"
@@ -108,7 +108,7 @@ export default function AddTaskCard({children}){
                         size="small"
                         variant="outlined"
                         display='inline-flex'
-                        sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: 'black','&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
+                        sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: 'black','&:hover':{backgroundColor:yellow[200], borderColor:'black'} }}
                         onClick = {()=>showDogTask('WaterClick')}
                         >
                           <WaterIcon fontSize="large"
@@ -120,7 +120,7 @@ export default function AddTaskCard({children}){
                         size="small"
                         variant="outlined"
                         display='inline-flex'
-                        sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: 'black','&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
+                        sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: 'black','&:hover':{backgroundColor:yellow[200], borderColor:'black'} }}
                         onClick = {()=>showDogTask('MedicationClick')}
                         >
                           <MedicationIcon fontSize="large"
@@ -132,7 +132,7 @@ export default function AddTaskCard({children}){
                         size="small"
                         variant="outlined"
                         display='inline-flex'
-                        sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: 'black','&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
+                        sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: 'black','&:hover':{backgroundColor:yellow[200], borderColor:'black'} }}
                         onClick = {()=>showDogTask('BrushClick')}
                         >
                             <BrushIcon />
@@ -142,7 +142,7 @@ export default function AddTaskCard({children}){
                         size="small"
                         variant="outlined"
                         display='inline-flex'
-                        sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: 'black','&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
+                        sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: 'black','&:hover':{backgroundColor:yellow[200], borderColor:'black'} }}
                         onClick = { showDogTask }
                         >
                           <PsychologyIcon fontSize="large"
@@ -154,7 +154,7 @@ export default function AddTaskCard({children}){
                         size="small"
                         variant="outlined"
                         display='inline-flex'
-                        sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: 'black','&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} }}
+                        sx={{borderRadius: 20, flexDirection: 'reverse', alignItems: 'center', width: '10%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: 'black','&:hover':{backgroundColor:yellow[200], borderColor:'black'} }}
                         onClick = { showDogTask }
                         >
                           <SportsEsportsIcon fontSize="large"
@@ -170,7 +170,7 @@ export default function AddTaskCard({children}){
             <Button 
                 variant="outlined"
                 display='inline-flex'
-                sx={{width: '33%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900],fontWeight: 'bold',mt: 1.5, '&:hover':{backgroundColor:teal[200], borderColor:'black', color: '#9d099e'} 
+                sx={{width: '33%', alignSelf: 'center', backgroundColor: lightBlue[200], borderColor:'black', color: blueGrey[900], fontWeight: 'bold', mt: 1.5, '&:hover':{backgroundColor:yellow[200], borderColor:'black'} 
                 }}
             >
                 Log Task
