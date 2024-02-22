@@ -26,7 +26,7 @@ export const TaskProvider = ({children}) => {
 
     //Add task
     const addTask = async (newTask) => {
-        const response = await fetch('/task', {
+        const response = await fetch('http://localhost:3003/tasks', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -34,8 +34,11 @@ export const TaskProvider = ({children}) => {
             body: JSON.stringify(newTask),
             //JSON.stringify will turn the newTask, which is an array, into a JSON string.
         })
+        console.log('line 37, newTask pre response:', newTask)
         const data = await response.json()
+        console.log('line 39, data after response.json:', data)
         setTask([newTask, ...task])
+        console.log('line 41:,', task)
     }
 
     //delete task
