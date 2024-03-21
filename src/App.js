@@ -1,6 +1,7 @@
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Home from './components/Home'
+import Calendar from './components/Calendar.jsx'
 import ShowContainerTask from './components/ShowContainerTask'
 import {TaskProvider} from './context/TaskContext.js'
 import {createTheme, ThemeProvider} from '@mui/material'
@@ -53,6 +54,14 @@ export default function App() {
                           <ShowContainerTask/>
                         </div>
                       }
+                    />
+                    <Route
+                    exact path='/calendar'
+                    element={
+                      <div>
+                        <Calendar/>
+                      </div>
+                    }
                     />
                 </Routes>
               </div>
