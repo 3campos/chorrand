@@ -1,41 +1,31 @@
 import * as React from 'react';
-import {TextField} from '@mui/material'
-import DogTaskDescription from '../DogTaskDescription'
-import Card from '@mui/material/Card'
+// import DogTaskDescription from '../DogTaskDescription'
 import { yellow, blueGrey, lightBlue, teal } from '@mui/material/colors';
+import { useState, useContext } from 'react'
+import { Button, Checkbox, FormGroup, FormControlLabel, TextField} from '@mui/material';
 import TaskContext from '../../context/TaskContext'
-import { useContext } from 'react'
-import { Button } from '@mui/material';
-import { useState } from 'react';
+import Card from '@mui/material/Card'
 
 export default function WalkDog(){
-
-    // const [checked, setChecked] = React.useState(false);
     // const [input, setInput] = useState('')
     const [timeSpent, setTimeSpent] = useState('')
+    const [pottyStatus, setPottyStatus] = useState('')
     
     const {addTask} = useContext(TaskContext)
 
     const handleSubmit = (event) => {
         event.preventDefault()
         const newTask = {
-            duration: timeSpent
+            title: 'Dog Walk',
+            duration: timeSpent,
+            potty: pottyStatus
         }
-        console.log('timeSpent:', timeSpent)
         addTask(newTask)
     }
 
-    // const handleChange = (e) => {
-    //     const {value} = e.target;
-    //     setInput((prev) => ({
-    //         prev,
-    //         value
-    //     }))
-    //   };
-
-    // const handleChange = () => {
-    //     setChecked((prev) => !prev);
-    //   };
+    const handleCheckBox = (check) => {
+        setPottyStatus(check ? 'Yes' : 'No')
+	}
 
     return(
         <Card
@@ -61,18 +51,15 @@ export default function WalkDog(){
                     onInput={event=>setTimeSpent(event.target.value)}
                   />
             </div>
-            {/* <div>
-            <TextField
-                    id="standard-textarea"
-                    label={"Potty?:"}
-                    placeholder=". . ."
-                    multiline
-                    variant="standard"
-                    sx={{width: '75%', color: 'black', m: 1}}
-                    color = 'primary'
-                    onInput={event=>setInput(event.target.value)}
-                  />
-            </div> */}
+            <div>
+                <FormGroup>
+                    <FormControlLabel 
+                        control={<Checkbox />} 
+                        label="Potty?"
+                        onInput={event=>handleCheckBox(event.target.checked)}
+                        />
+                </FormGroup>
+            </div>
             {/* <div>
                 <DogTaskDescription/>
             </div> */}
