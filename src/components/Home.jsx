@@ -14,7 +14,7 @@ export default function Home({children}) {
         <div>
             {tasks?.map((singleTask, id) => <div key={id}>
                 <div>{`${'Task: ' + singleTask.title + ' ' + singleTask.label}`}</div>
-                <div> {`${' Duration: ' + singleTask.duration + ' minutes' + ' Location: ' + singleTask.location}`}</div>
+                <div> {`${' Duration: ' + singleTask.duration + ' minutes' + ' Location: ' + singleTask.location + ' Potty: ' + singleTask.potty}`}</div>
         </div>)}
         <div className="w-1/3 pl-20 py-2">
                             <button className='w-32 h-16 ml-10 rounded-full border-solid border-2 border-white text-blue-300 bg-white hover:bg-slate-100'>

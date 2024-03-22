@@ -45,7 +45,7 @@ export default function WalkDog(){
                     placeholder=". . ."
                     multiline
                     variant="standard"
-                    sx={{width: '75%', color: 'black', m: 1}}
+                    sx={{width: '75%', color: 'black'}}
                     color = 'primary'
                     value={timeSpent}
                     onInput={event=>setTimeSpent(event.target.value)}
@@ -54,9 +54,13 @@ export default function WalkDog(){
             <div>
                 <FormGroup>
                     <FormControlLabel 
-                        control={<Checkbox />} 
+                        control={<Checkbox
+                                    sx={{ml:0}}
+                                />} 
                         label="Potty?"
+                        labelPlacement="start"
                         onInput={event=>handleCheckBox(event.target.checked)}
+                        sx={{width: '25%', ml: 2.5}}
                         />
                 </FormGroup>
             </div>
