@@ -83,11 +83,15 @@ export default function WalkDog(){
         switch (true){
             case check.checked === true:
                 setPoopedCheckboxStatus(true);
-                setPottyStatus(pottyStatus[1]=true);
+                const yesPottyArray = [...pottyStatus];
+                yesPottyArray.splice(1, 1, true);
+                setPottyStatus(yesPottyArray);
                 break;
             case check.checked === false:
-                setPoopedCheckboxStatus(false);
-                setPottyStatus(pottyStatus[1]=false);
+                setPoopedCheckboxStatus(true);
+                const noPottyArray = [...pottyStatus];
+                noPottyArray.splice(1, 1, false);
+                setPottyStatus(noPottyArray);
                 break;
             default:
                 // setPottyStatus('Did not go potty.')
